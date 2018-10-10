@@ -1,6 +1,5 @@
-# TODO: Write documentation for `Crystalflow`
-module Crystalflow
-  VERSION = "0.1.0"
+require "../vendor/lib_tensorflow"
+require "./crystalflow/*"
 
-  # TODO: Put your code here
+module Crystalflow
 end
