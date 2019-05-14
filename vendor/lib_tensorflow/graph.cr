@@ -1,7 +1,9 @@
 require "./definitions"
 
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
+  fun new_graph = TF_NewGraph() : X_Graph
+
   fun graph_set_tensor_shape = TF_GraphSetTensorShape(graph : X_Graph*,
     output : Output,
     dimensions : Int64T,
@@ -21,7 +23,7 @@ lib LibTensorflow
     status : X_Status*
   ) : Void
 
-  fun new_operation = TF_NewOperation(graph : X_Graph*,
+  fun new_operation = TF_NewOperation(graph : X_Graph,
     operation_type : LibC::Char*,
     operation_name : LibC::Char*
   ) : X_OperationDescription*
@@ -204,13 +206,13 @@ lib LibTensorflow
 
   fun operation_get_attr_float = TF_OperationGetAttrFloat(operation : X_Operation*,
     attr_name : LibC::Char*,
-    value : Float*,
+    value : Float64*,
     status : X_Status*
   ) : Void
 
   fun operation_get_attr_float_list = TF_OperationGetAttrFloatList(operation : X_Operation*,
     attr_name : LibC::Char*,
-    values : Float*,
+    values : Float64*,
     max_values : LibC::Int,
     status : X_Status*
   ) : Void
@@ -376,9 +378,9 @@ lib LibTensorflow
     number_of_operations : LibC::Int,
     operations : X_Operation*,
     number_of_inputs : LibC::Int,
-    inputs : X_Output*,
+    inputs : Output*,
     number_of_outputs : LibC::Int,
-    outputs : X_Output*,
+    outputs : Output*,
     output_names : LibC::Char*,
     options : X_FunctionOptions*,
     description : LibC::Char,

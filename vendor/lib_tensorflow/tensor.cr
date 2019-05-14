@@ -1,6 +1,6 @@
 require "./definitions"
 
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
   fun new_tensor = TF_NewTensor(type : DataType,
     dims : Int64T*,

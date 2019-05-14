@@ -1,6 +1,6 @@
 require "./definitions"
 
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
   fun new_status = TF_NewStatus : X_Status
   fun set_status = TF_SetStatus(status : X_Status, code : Code, message : LibC::Char*)

@@ -1,4 +1,4 @@
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
   alias ApiDefMap = Void
   alias DeprecatedSession = Void
@@ -8,6 +8,7 @@ lib LibTensorflow
   alias Graph = Void
   alias ImportGraphDefOptions = Void
   alias ImportGraphDefResults = Void
+  alias Int64T = LibC::LongLong
   alias Lib64T = LibC::LongLong
   alias Library = Void
   alias Operation = Void
@@ -16,7 +17,7 @@ lib LibTensorflow
   alias SessionOptions = Void
   alias Status = Void
   alias Tensor = Void
-  alias UInt64T = LibC::UnsignedLongLong
+  alias UInt64T = LibC::LongLong
 
   type X_ApiDefMap = Void*
   type X_DeviceList = Void*
@@ -33,9 +34,6 @@ lib LibTensorflow
   type X_SessionOptions = Void*
   type X_Status = Void*
   type X_Tensor = Void*
-
-  struct Status
-  end
 
   struct Input
     operation : X_Operation*

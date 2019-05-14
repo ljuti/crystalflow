@@ -1,6 +1,6 @@
 require "./definitions"
 
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
 
   fun new_session_options = TF_NewSessionOptions : X_SessionOptions
@@ -14,7 +14,7 @@ lib LibTensorflow
     status : X_Status
   ) : Void
 
-  fun new_session = TF_Session(graph : X_Graph, opts : X_SessionOptions, status : X_Graph) : X_Session
+  fun new_session = TF_Session(graph : X_Graph, opts : X_SessionOptions, status : X_Status) : X_Session
   fun close_session = TF_CloseSession(session : X_Session, status : X_Status) : Void
   fun delete_session = TF_DeleteSession(session : X_Session, status : X_Status) : Void
 

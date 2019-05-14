@@ -1,4 +1,4 @@
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
   fun string_encode = TF_StringEncode(src : LibC::Char*,
     src_len : LibC::SizeT,

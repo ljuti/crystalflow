@@ -1,6 +1,6 @@
 require "./definitions"
 
-@[Link["tensorflow"]]
+@[Link("tensorflow")]
 lib LibTensorflow
   fun new_buffer = TF_NewBufferFromString(proto : Void*, proto_len : LibC::SizeT) : Buffer*
   fun new_buffer = TF_NewBuffer : Buffer*
